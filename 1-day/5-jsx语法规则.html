@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello react</title>
+    <style>
+        .dir {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <!-- react 核心库 -->
+    <script src="../新版本/react.development.js"></script>
+    <!-- 操作dom库 -->
+    <script src="../新版本/react-dom.development.js"></script>
+    <!-- jsx ==> js -->
+    <script src="../新版本/babel.min.js"></script>
+
+    <script type="text/babel">
+        const mydata = 'hello sunyesheng'
+        const VDOM = (
+            <h1 id="sunyesheng" className="dir">
+                <span style={{
+                    color: 'blue'
+                }}>hello myreact</span>
+                {mydata}
+            </h1>
+        )
+        
+        ReactDOM.render(VDOM,document.querySelector('#app'))
+
+        /**
+         *  jsx 语法规则
+         * 
+         * 1. 定义虚拟DOM 不要写引号
+         *  
+         * 2.混入js表达式 使用{}插值表达式
+         * 
+         * 3.样式的类名指定 不要用类名 用className
+         * 
+         * 4.内联样式style标签 写小驼峰的形式 也就是首字母小写 其余字母首字母大写
+         * 
+         * 5.不能有多个根标签
+         * 
+         * 6.标签必须闭合 要么自闭和 要么添加双标签闭合
+         * 
+         * 7.标签首字母
+         *      ·小写字母开头  则转为同名元素 若html中无该标签同名元素 则报错
+         *      ·若首字母为大写   则转为react就去渲染对应的组件
+         */
+
+    </script>
+
+    
+</body>
+</html>

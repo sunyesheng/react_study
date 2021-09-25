@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello react</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <!-- react 核心库 -->
+    <script src="../新版本/react.development.js"></script>
+    <!-- 操作dom库 -->
+    <script src="../新版本/react-dom.development.js"></script>
+    <!-- jsx ==> js -->
+    <script src="../新版本/babel.min.js"></script>
+
+    <script type="text/babel">
+    // 模拟一些数据
+    const data = ['1','2','3']
+    // react 不能遍历对象 会报错  要用遍历数组
+
+
+    // 1.创建虚拟DOM
+    const VDOM = (
+        
+        <div>
+            <h1>循环遍历数据</h1>
+            <ul>
+                {
+                    data.map((item,index)=>{
+                        return <li key={index}>{item}</li>
+                    })
+                }
+            </ul>
+        </div>
+    )
+    // 混入表达式用{}  只能写js表达式
+    // 表达式概念：一个表达式可以产生一个值 可以放在任何一个需要值的地方
+    //              变量名 a   a+b    函数调用demo(1)  定义一个能变量 const a =  能接到就是表示式
+    //              arr.map()  返回值  定义一个函数 接受变量
+    // js代码概念: if for while switch 属于代码语句
+    // 2.渲染虚拟DOM到页面
+    ReactDOM.render(VDOM,document.getElementById('app'))
+    </script>
+</body>
+</html>
