@@ -7,6 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-     
+    <div id="text"></div>
+    <!-- react 核心库 -->
+     <script src="../新版本/react.development.js"></script>
+     <!-- 操作dom库 -->
+    <script src="../新版本/react-dom.development.js"></script>
+    <!-- jsx ==> js -->
+    <script src="../新版本/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // render是放在哪里的 类的原型对象上 供实例使用
+        // this是 MyDemo实例对象
+        // React.Component 对象下的各个属性
+        class MyDemo extends React.Component {
+            render(){
+                return <h1>hello world</h1>
+            }
+        }
+        ReactDOM.render(<MyDemo/>,document.querySelector("#text"))
+        // 执行ReactDOM 发生了什么
+        // 发现组件是类组件 随后new出该类的实例 并且通过该实例调用到原型上的render方法
+        // 将render返回的虚拟dom转为真实dom随后呈现在页面中
+    </script>
+
 </body>
 </html>

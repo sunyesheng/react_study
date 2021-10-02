@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text"></div>
+    <!-- react 核心库 -->
+    <script src="../新版本/react.development.js"></script>
+    <!-- 操作dom库 -->
+    <script src="../新版本/react-dom.development.js"></script>
+    <!-- jsx ==> js -->
+    <script src="../新版本/babel.min.js"></script>
+    <script type="text/babel">
+        // 调用原型对象上有个render 函数
+        // setState 修改状态来修改状态
+        // this.setState({isHot:true})
+        // 状态必须通过setState 更改状态 不能直接更改状态
+
+        //             细节方面
+        /** 
+         * 1.状态是更新部分 还是覆盖整个部分？
+         *      且是合并状态 将最新的状态合并到原先的状态上
+         * 2.构造器 调用几次？
+         *      只调用一次
+         * 3.render调用几次？
+         *      1+n次  n是修改状态后的render  开始要调用一次
+         * 4. 方法调用几次？
+         *      n次 点击事件
+         * 
+         * state放在外部 方法写成箭头函数
+         */
+    </script>
+</body>
+</html>
